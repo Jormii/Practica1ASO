@@ -335,7 +335,7 @@ int sis_terminar_proceso()
 {
 
 	printk("-> FIN PROCESO %d\n", p_proc_actual->id);
-
+	
 	liberar_proceso();
 
 	return 0; /* no debería llegar aqui */
@@ -371,5 +371,15 @@ int main()
 	p_proc_actual=planificador();
 	cambio_contexto(NULL, &(p_proc_actual->contexto_regs));
 	panico("S.O. reactivado inesperadamente");
+	return 0;
+}
+
+/*
+	16 / 10 / 2018
+*/
+int sis_obtener_id()
+{
+	int id_proceso_actual = p_proceso_actual->id;
+	printk("_> ID del proceso actual: %d\n", id_proceso_actual);
 	return 0;
 }

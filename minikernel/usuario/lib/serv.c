@@ -44,3 +44,11 @@ int escribir(char *texto, unsigned int longi){
 	return llamsis(ESCRIBIR, 2, (long)texto, (long)longi);
 }
 
+/*
+	16 / 10 / 2018
+*/
+int obtener_id_proceso()
+{
+	return llamsis(OBTENER_ID, 0);
+}
+
