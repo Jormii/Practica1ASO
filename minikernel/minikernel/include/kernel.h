@@ -94,7 +94,7 @@ int sis_escribir();
 	16 / 10 / 2018
 	A la variable "tabla_de_servicios" inferior se le ha añadido la siguiente función
 */
-int sis_obtener_id();
+int sis_obtener_id_pr();
 
 /*
  * Variable global que contiene las rutinas que realizan cada llamada
@@ -102,7 +102,7 @@ int sis_obtener_id();
 servicio tabla_servicios[NSERVICIOS] =	{	{sis_crear_proceso},
 											{sis_terminar_proceso},
 											{sis_escribir},
-											{sis_obtener_id}
+											{sis_obtener_id_pr}
 										};
 
 #endif /* _KERNEL_H */

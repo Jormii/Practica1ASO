@@ -47,7 +47,7 @@ int escribir(char *texto, unsigned int longi){
 /*
 	16 / 10 / 2018
 */
-int obtener_id_proceso()
+int obtener_id_pr()
 {
 	return llamsis(OBTENER_ID, 0);
 }

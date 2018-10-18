@@ -341,6 +341,17 @@ int sis_terminar_proceso()
 	return 0; /* no debería llegar aqui */
 }
 
+
+/*
+	16 / 10 / 2018
+*/
+int sis_obtener_id_pr()
+{
+	int id_proceso_actual = p_proc_actual->id;
+	printk("_> ID del proceso actual: %d\n", id_proceso_actual);
+	return id_proceso_actual;
+}
+
 /*
  *
  * Rutina de inicialización invocada en arranque
@@ -354,8 +365,8 @@ int main()
 	instal_man_int(EXC_MEM, exc_mem);
 	instal_man_int(INT_RELOJ, int_reloj);
 	instal_man_int(INT_TERMINAL, int_terminal);
-	instal_man_int(LLAM_SIS, tratar_llamsis);
 	instal_man_int(INT_SW, int_sw);
+	instal_man_int(LLAM_SIS, tratar_llamsis);
 
 	iniciar_cont_int();		/* inicia cont. interr. */
 	iniciar_cont_reloj(TICK);	/* fija frecuencia del reloj */
@@ -371,15 +382,5 @@ int main()
 	p_proc_actual=planificador();
 	cambio_contexto(NULL, &(p_proc_actual->contexto_regs));
 	panico("S.O. reactivado inesperadamente");
-	return 0;
-}
-
-/*
-	16 / 10 / 2018
-*/
-int sis_obtener_id()
-{
-	int id_proceso_actual = p_proceso_actual->id;
-	printk("_> ID del proceso actual: %d\n", id_proceso_actual);
 	return 0;
 }
