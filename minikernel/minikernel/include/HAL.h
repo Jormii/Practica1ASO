@@ -97,7 +97,6 @@ void activar_int_SW(); /* activa la interrupción SW */
  */
 void cambio_contexto(contexto_t *contexto_a_salvar, contexto_t *contexto_a_restaurar);
 
-
 /*
  *
  * Operaciones relacionadas con mapa de memoria del proceso y pila
