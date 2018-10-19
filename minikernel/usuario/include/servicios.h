@@ -30,5 +30,9 @@ int crear_proceso(char *prog);
 int terminar_proceso();
 int escribir(char *texto, unsigned int longi);
 
+/*
+	16 / 10 / 2018
+*/
+int obtener_id_pr();
 #endif /* SERVICIOS_H */
 
